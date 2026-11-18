@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="موشانيلا – إيمان شبانه: موشن جرافيك، مونتاج ريلز، فيديوهات AI وتصاميم سوشيال ميديا لعلامتك التجارية في مصر والخليج.">
+<meta property="og:title" content="Moshanilla – Eman Shabana">
+<meta property="og:description" content="موشن جرافيك · مونتاج · فيديو AI · تصاميم سوشيال">
+<meta property="og:image" content="logo.jpg">
+<link rel="icon" href="logo.jpg">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>Moshanilla Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a motion-editor world — hero is a "viewer" with a timeline and keyframes; sections scroll like scenes on a plum stage, gold is the brand's moving line. */
+:root{
+  --stage:#1c0a23;
+  --stage-2:#28102f;
+  --plum:#4b1650;
+  --plum-hi:#6b2b6f;
+  --logo-bg:#4a1a4f;
+  --gold:#f0a81c;
+  --gold-soft:#e6bd6a;
+  --ink:#f7eef6;
+  --muted:#c5aac8;
+  --line:rgba(240,168,28,.22);
+  --hair:rgba(247,238,246,.10);
+  --f-display:"Readex Pro","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Arabic","Readex Pro",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  /* type scale */
+  --t-xs:12px; --t-sm:14px; --t-base:15px; --t-md:17px; --t-lg:19px;
+  --t-h2:clamp(24px,2.6vw,32px); --t-h1:clamp(28px,3.4vw,44px);
+  --r:14px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--stage);color:var(--ink);font-family:var(--f-body);font-size:var(--t-base);line-height:1.75;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1140px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);line-height:1.3;text-wrap:balance;margin:0;font-weight:600}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:inline-flex;gap:8px;align-items:center}
+.eyebrow::before{content:"";width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-weight:500;font-family:var(--f-display);font-size:var(--t-sm);transition:transform .2s,background .2s,color .2s,border-color .2s;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn-gold{background:var(--gold);color:var(--stage)}
+.btn-gold:hover{transform:translateY(-2px);background:var(--gold-soft)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* socials */
+.socials{display:flex;gap:8px;flex-wrap:wrap}
+.soc{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .2s,border-color .2s}
+.soc svg{width:17px;height:17px;fill:var(--ink);transition:fill .2s}
+.soc:hover{background:var(--gold);border-color:var(--gold)}
+.soc:hover svg{fill:var(--stage)}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--stage)}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(28,10,35,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand img{height:46px;width:auto;border-radius:8px;display:block}
+.nav-links{display:flex;gap:24px;font-size:var(--t-sm);color:var(--muted)}
+.nav-links a:hover{color:var(--gold)}
+.nav-right{display:flex;gap:10px;align-items:center}
+.lang{font-family:var(--f-mono);font-size:var(--t-xs);padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer}
+.lang:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:860px){.nav-links{display:none}.nav .btn{display:none}}
+
+/* hero */
+.hero{position:relative;padding-block:56px 48px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:120%;background:radial-gradient(55% 60% at 80% 20%,rgba(107,43,111,.7),transparent 70%),radial-gradient(40% 50% at 10% 85%,rgba(75,22,80,.75),transparent 70%);z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:18px;min-width:0}
+.hero h1{font-size:var(--t-h1);font-weight:700;line-height:1.35}
+.hero h1 .gold{color:var(--gold);display:block}
+.hero .lead{color:var(--muted);font-size:var(--t-md);max-width:46ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.hero-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;border-top:1px solid var(--hair);margin-top:4px}
+.stats{display:flex;flex-wrap:wrap;gap:26px}
+.stat b{display:block;font-family:var(--f-display);font-size:var(--t-md);color:var(--gold);font-weight:600;line-height:1.3}
+.stat span{font-size:var(--t-xs);color:var(--muted)}
+
+/* viewer */
+.viewer{background:var(--stage-2);border:1px solid var(--hair);border-radius:16px;padding:10px;box-shadow:0 30px 70px -30px rgba(0,0,0,.7);min-width:0;width:100%;max-width:520px;justify-self:center}
+.viewer-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);padding:2px 6px 9px;direction:ltr;white-space:nowrap;overflow:hidden}
+.dots{display:flex;gap:5px}.dots i{width:8px;height:8px;border-radius:50%;background:var(--plum-hi)}.dots i:first-child{background:var(--gold)}
+.screen{position:relative;aspect-ratio:16/10;max-width:100%;border-radius:10px;overflow:hidden;background:var(--logo-bg);display:grid;place-items:center}
+.screen img{position:relative;width:84%;height:auto;border-radius:6px;z-index:1}
+.screen svg.trail{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.trail path{fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-dasharray:5 9;opacity:.35}
+.safe{position:absolute;inset:6%;border:1px dashed rgba(247,238,246,.14);border-radius:4px;pointer-events:none;z-index:2}
+.rec{position:absolute;top:8px;inset-inline-start:10px;font-family:var(--f-mono);font-size:10px;color:var(--ink);display:flex;gap:5px;align-items:center;direction:ltr;z-index:2}
+.rec::before{content:"";width:7px;height:7px;border-radius:50%;background:#ff4d5e;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.2}}
+.timeline{direction:ltr;margin-top:10px;display:grid;gap:5px}
+.tc{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.tc b{color:var(--gold);font-weight:600}
+.track{position:relative;height:22px;border-radius:5px;background:rgba(247,238,246,.05);overflow:hidden}
+.track .clip{position:absolute;top:3px;bottom:3px;border-radius:4px;font-family:var(--f-mono);font-size:9.5px;line-height:16px;padding-inline:7px;color:var(--stage);white-space:nowrap;overflow:hidden}
+.track .kf{position:absolute;top:50%;width:8px;height:8px;background:var(--gold);transform:translate(-50%,-50%) rotate(45deg)}
+.playhead{position:absolute;top:0;bottom:0;width:2px;background:var(--ink);left:0;box-shadow:0 0 8px var(--gold)}
+
+/* ticker */
+.ticker{border-block:1px solid var(--hair);overflow:hidden;background:var(--stage-2)}
+.ticker-in{display:flex;gap:36px;width:max-content;padding-block:13px;animation:slide 34s linear infinite;font-family:var(--f-display);font-size:var(--t-md);color:var(--muted)}
+.ticker-in span{display:inline-flex;align-items:center;gap:36px;white-space:nowrap}
+.ticker-in span::after{content:"";width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+@keyframes slide{to{transform:translateX(-50%)}}
+[dir="rtl"] .ticker-in{animation-name:slide-rtl}
+@keyframes slide-rtl{to{transform:translateX(50%)}}
+
+/* sections */
+section.block{padding-block:76px 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:32px}
+.head h2{font-size:var(--t-h2);margin-top:8px}
+.head p{color:var(--muted);max-width:44ch;font-size:var(--t-base)}
+
+/* work */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--f-body);font-size:var(--t-sm);padding:6px 15px;border-radius:999px;border:1px solid var(--hair);background:none;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--gold);color:var(--stage);border-color:var(--gold);font-weight:600}
+.chip:hover{border-color:var(--gold)}
+.grid-work{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work{display:flex;flex-direction:column;gap:10px;min-width:0}
+.thumb{position:relative;aspect-ratio:1080/844;max-width:100%;border-radius:var(--r);overflow:hidden;border:1px solid var(--hair);background:var(--stage-2);display:grid;place-items:center;transition:border-color .3s}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(28,10,35,.5))}
+.work:hover .thumb img{transform:scale(1.05)}
+.work:hover .thumb{border-color:var(--gold)}
+.thumb .play{position:relative;z-index:1;width:50px;height:50px;border-radius:50%;background:rgba(28,10,35,.65);border:1px solid var(--gold);display:grid;place-items:center;opacity:0;transition:opacity .25s,transform .25s}
+.thumb .play svg{width:17px;height:17px;fill:var(--gold);margin-inline-start:3px}
+[dir="rtl"] .thumb .play svg{transform:scaleX(-1);margin-inline-start:0;margin-inline-end:3px}
+.work:hover .play,.work:focus-visible .play{opacity:1;transform:scale(1.06)}
+.ratio{position:absolute;top:9px;inset-inline-end:9px;z-index:1;font-family:var(--f-mono);font-size:10px;padding:2px 8px;border-radius:6px;background:rgba(28,10,35,.75);color:var(--gold-soft);direction:ltr}
+.work h3{font-size:var(--t-base);font-weight:600}
+.work .meta{font-size:var(--t-xs);color:var(--muted)}
+.watch{color:var(--gold)}
+@media (max-width:980px){.grid-work{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid-work{grid-template-columns:1fr}}
+@media (hover:none){.thumb .play{opacity:1}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--hair);border-radius:16px;overflow:hidden}
+.svc{padding:24px 22px;display:flex;flex-direction:column;gap:11px;border-inline-end:1px solid var(--hair);transition:background .3s;min-width:0}
+.svc:last-child{border-inline-end:0}
+.svc:hover{background:var(--stage-2)}
+.svc .ico{width:40px;height:40px;border-radius:11px;background:rgba(240,168,28,.12);display:grid;place-items:center}
+.svc .ico svg{width:21px;height:21px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:var(--t-md)}
+.svc p{color:var(--muted);font-size:var(--t-sm);line-height:1.7}
+.svc ul{list-style:none;margin:auto 0 0;padding:12px 0 0;border-top:1px dashed var(--hair);display:grid;gap:5px;font-size:var(--t-sm)}
+.svc li{display:flex;gap:8px;align-items:baseline}
+.svc li::before{content:"";width:5px;height:5px;flex:none;background:var(--gold);transform:rotate(45deg) translateY(-2px)}
+@media (max-width:980px){.services{grid-template-columns:repeat(2,1fr)}.svc:nth-child(2){border-inline-end:0}.svc:nth-child(-n+2){border-bottom:1px solid var(--hair)}}
+@media (max-width:560px){.services{grid-template-columns:1fr}.svc{border-inline-end:0;border-bottom:1px solid var(--hair)}.svc:last-child{border-bottom:0}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.steps::before{content:"";position:absolute;top:19px;inset-inline:20px;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 7px,transparent 7px 14px);opacity:.45}
+.step{position:relative;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .n{width:38px;height:38px;border-radius:50%;background:var(--stage);border:2px solid var(--gold);display:grid;place-items:center;font-family:var(--f-mono);font-size:var(--t-xs);color:var(--gold);font-weight:600}
+.step h3{font-size:var(--t-md);margin-top:4px}
+.step p{color:var(--muted);font-size:var(--t-sm);line-height:1.7}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:28px}.steps::before{display:none}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* packages */
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.pkg{display:flex;flex-direction:column;gap:14px;padding:26px 22px;border-radius:16px;border:1px solid var(--hair);background:var(--stage-2);min-width:0;position:relative}
+.pkg.hot{background:linear-gradient(170deg,var(--plum),var(--stage-2));border-color:var(--gold)}
+.pkg .tag{position:absolute;top:-11px;inset-inline-start:20px;background:var(--gold);color:var(--stage);font-size:var(--t-xs);font-weight:600;padding:2px 11px;border-radius:999px}
+.pkg h3{font-size:var(--t-lg)}
+.pkg .for{color:var(--muted);font-size:var(--t-sm)}
+.pkg ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:var(--t-sm)}
+.pkg li{display:flex;gap:9px;align-items:baseline}
+.pkg li::before{content:"✓";color:var(--gold);font-weight:700}
+.pkg .btn{margin-top:auto;justify-content:center}
+@media (max-width:900px){.pkgs{grid-template-columns:1fr}}
+
+/* contact */
+#contact{padding-top:76px}
+.contact{border-radius:20px;overflow:hidden;padding:44px 36px;background:radial-gradient(70% 90% at 85% 10%,var(--plum-hi),transparent 70%),linear-gradient(135deg,var(--plum),var(--stage-2));border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.contact h2{font-size:var(--t-h2)}
+.contact p{color:var(--muted);margin-top:10px;max-width:42ch}
+.contact .socials{margin-top:20px}
+.cards{display:grid;gap:10px;min-width:0}
+.cline{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:13px;background:rgba(28,10,35,.55);border:1px solid var(--hair);min-width:0}
+.cline .ic{width:36px;height:36px;border-radius:50%;background:var(--gold);display:grid;place-items:center;flex:none}
+.cline .ic svg{width:18px;height:18px;fill:var(--stage)}
+.cline .txt{min-width:0;flex:1}
+.cline .txt small{display:block;color:var(--muted);font-size:var(--t-xs);line-height:1.4}
+.cline .txt b{font-family:var(--f-mono);font-size:var(--t-sm);font-weight:600;direction:ltr;unicode-bidi:isolate;display:block;overflow-wrap:anywhere;user-select:all}
+.cline .act{font-size:var(--t-xs);padding:6px 13px;border-radius:999px;border:1px solid var(--line);color:var(--gold);background:none;cursor:pointer;font-family:var(--f-body);white-space:nowrap}
+.cline .act:hover{background:var(--gold);color:var(--stage)}
+@media (max-width:860px){.contact{grid-template-columns:1fr;padding:34px 20px}}
+
+footer{padding-block:28px;border-top:1px solid var(--hair);margin-top:76px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;color:var(--muted);font-size:var(--t-sm)}
+.foot-brand{display:flex;align-items:center;gap:14px}
+.foot-brand img{height:52px;width:auto;border-radius:8px}
+
+.fab{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(18px + env(safe-area-inset-right,0px));z-index:70;width:52px;height:52px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .2s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:27px;height:27px;fill:#fff}
+
+.reveal{transition:transform .7s ease,opacity .7s ease}
+.reveal.pre{transform:translateY(16px);opacity:.35}
+
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px}.hero{padding-block:36px 32px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Moshanilla"><img src="logo.jpg" alt="Moshanilla – Eman Shabana"></a>
+    <nav class="nav-links">
+      <a href="#work" data-i18n="nav_work">الأعمال</a>
+      <a href="#services" data-i18n="nav_services">الخدمات</a>
+      <a href="#process" data-i18n="nav_process">طريقة العمل</a>
+      <a href="#packages" data-i18n="nav_packages">الباقات</a>
+      <a href="#contact" data-i18n="nav_contact">تواصل</a>
+    </nav>
+    <div class="nav-right">
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language">EN</button>
+      <a class="btn btn-gold wa" href="#" target="_blank" rel="noopener" data-i18n="nav_cta">ابدأ مشروعك</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow" data-i18n="hero_eyebrow">موشن جرافيك · مونتاج · فيديو AI</span>
+        <h1 data-i18n-html="hero_title">نحوّل فكرتك إلى فيديو <span class="gold">يتحرّك… ويبيع</span></h1>
+        <p class="lead" data-i18n="hero_lead">أنا إيمان شبانه، مصممة موشن جرافيك. أصنع فيديوهات موشن وإعلانات بالذكاء الاصطناعي وريلز جاهزة للنشر لعلامتك التجارية في مصر والخليج.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold wa" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>
+            <span data-i18n="cta_whatsapp">تواصل واتساب</span>
+          </a>
+          <a class="btn btn-ghost" href="#work" data-i18n="cta_work">شاهد الأعمال</a>
+        </div>
+        <div class="hero-foot">
+          <div class="stats">
+            <div class="stat"><b>12+</b><span data-i18n="s1">مشروع منشور على Behance</span></div>
+            <div class="stat"><b>Motion · AI</b><span data-i18n="s2">موشن وفيديوهات ذكاء اصطناعي</span></div>
+            <div class="stat"><b data-i18n="s3b">مصر والخليج</b><span data-i18n="s3">عملاء في المنطقة العربية</span></div>
+          </div>
+          <div class="socials" data-socials></div>
+        </div>
+      </div>
+
+      <div class="viewer" aria-hidden="true">
+        <div class="viewer-top"><div class="dots"><i></i><i></i><i></i></div><span>moshanilla_showreel.mp4</span><span>1920×1080 · 30fps</span></div>
+        <div class="screen">
+          <svg class="trail" viewBox="0 0 400 250" preserveAspectRatio="none"><path d="M10 230 C 90 220, 110 40, 200 80 S 310 220, 392 20"/></svg>
+          <img src="logo.jpg" alt="">
+          <div class="safe"></div>
+          <div class="rec">REC</div>
+        </div>
+        <div class="timeline">
+          <div class="tc"><b id="tc">00:00:00:00</b><span>00:00:30:00</span></div>
+          <div class="track">
+            <div class="clip" style="left:2%;width:34%;background:var(--gold)">intro_logo</div>
+            <div class="clip" style="left:38%;width:40%;background:var(--gold-soft)">ai_scene_02</div>
+            <div class="clip" style="left:80%;width:18%;background:#c98fd0">cta</div>
+            <div class="playhead" id="ph"></div>
+          </div>
+          <div class="track">
+            <i class="kf" style="left:8%"></i><i class="kf" style="left:22%"></i><i class="kf" style="left:41%"></i><i class="kf" style="left:57%"></i><i class="kf" style="left:74%"></i><i class="kf" style="left:91%"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-in" id="ticker"></div>
+  </div>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><span class="eyebrow" data-i18n="work_eyebrow">معرض الأعمال</span><h2 data-i18n="work_title">شغل بيتكلم عن نفسه</h2></div>
+        <div class="filters" role="group" aria-label="Filter">
+          <button class="chip" type="button" data-f="all" aria-pressed="true" data-i18n="f_all">الكل</button>
+          <button class="chip" type="button" data-f="motion" aria-pressed="false" data-i18n="f_motion">موشن جرافيك</button>
+          <button class="chip" type="button" data-f="edit" aria-pressed="false" data-i18n="f_edit">مونتاج</button>
+        </div>
+      </div>
+      <div class="grid-work" id="gridWork"></div>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><span class="eyebrow" data-i18n="svc_eyebrow">الخدمات</span><h2 data-i18n="svc_title">كل اللي علامتك محتاجاه على الشاشة</h2></div>
+        <p data-i18n="svc_lead">خدمة واحدة أو باقة كاملة، حسب احتياجك.</p>
+      </div>
+      <div class="services">
+        <article class="svc reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17c4-8 7 4 11-4s4-6 7-7"/><path d="M17 6h4v4"/></svg></div>
+          <h3 data-i18n="sv1_t">موشن جرافيك</h3>
+          <p data-i18n="sv1_d">لوجو أنيميشن، فيديو شرح، وإعلانات موشن تشرح خدمتك في ثواني.</p>
+          <ul><li data-i18n="sv1_a">لوجو أنيميشن</li><li data-i18n="sv1_b">فيديو تعريفي 30–60 ثانية</li><li data-i18n="sv1_c">إنفوجرافيك متحرك</li></ul>
+        </article>
+        <article class="svc reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
+          <h3 data-i18n="sv2_t">فيديوهات AI</h3>
+          <p data-i18n="sv2_d">إعلانات منتجات ومشاهد مولّدة بالذكاء الاصطناعي، بتكلفة ووقت أقل من التصوير.</p>
+          <ul><li data-i18n="sv2_a">إعلان منتج من الصور</li><li data-i18n="sv2_b">شخصيات ومشاهد AI</li><li data-i18n="sv2_c">تعليق صوتي AI</li></ul>
+        </article>
+        <article class="svc reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5v4M13 5v4M18 5v4"/></svg></div>
+          <h3 data-i18n="sv3_t">مونتاج ريلز</h3>
+          <p data-i18n="sv3_d">مونتاج خفيف وسريع الإيقاع لتيك توك وإنستجرام وسناب.</p>
+          <ul><li data-i18n="sv3_a">قص وإيقاع وموسيقى</li><li data-i18n="sv3_b">نصوص على الفيديو</li></ul>
+        </article>
+        <article class="svc reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5"/><circle cx="15.5" cy="16" r="2"/></svg></div>
+          <h3 data-i18n="sv4_t">تصاميم سوشيال</h3>
+          <p data-i18n="sv4_d">تصاميم بوستات بهوية ثابتة لعلامتك، تكمّل الفيديوهات.</p>
+          <ul><li data-i18n="sv4_a">بوستات سوشيال ميديا</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="process">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><span class="eyebrow" data-i18n="pr_eyebrow">طريقة العمل</span><h2 data-i18n="pr_title">من الرسالة الأولى للفيديو النهائي</h2></div>
+        <p data-i18n="pr_lead">خطوات واضحة، ومتابعة معاك في كل مرحلة.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="n">01</div><h3 data-i18n="st1_t">نتكلم</h3><p data-i18n="st1_d">تبعتلي فكرتك أو منتجك، ونحدد الهدف والمنصة والمدة.</p></div>
+        <div class="step reveal"><div class="n">02</div><h3 data-i18n="st2_t">الفكرة والسكريبت</h3><p data-i18n="st2_d">أجهز تصور مبدئي وسكريبت قصير، وتوافق عليه قبل التنفيذ.</p></div>
+        <div class="step reveal"><div class="n">03</div><h3 data-i18n="st3_t">التنفيذ</h3><p data-i18n="st3_d">تصميم وتحريك ومونتاج، وأبعتلك نسخة أولى تشوفها.</p></div>
+        <div class="step reveal"><div class="n">04</div><h3 data-i18n="st4_t">التسليم</h3><p data-i18n="st4_d">تعديلات حسب ملاحظاتك، ثم تسليم الفيديو بجودة عالية.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="packages">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><span class="eyebrow" data-i18n="pk_eyebrow">الباقات</span><h2 data-i18n="pk_title">اختار اللي يناسب علامتك</h2></div>
+        <p data-i18n="pk_lead">الأسعار حسب المطلوب. ابعتلي على واتساب وهيوصلك عرض سعر خلال ساعات.</p>
+      </div>
+      <div class="pkgs">
+        <article class="pkg reveal">
+          <h3 data-i18n="p1_t">فيديو واحد</h3>
+          <p class="for" data-i18n="p1_f">لو محتاج إعلان أو لوجو أنيميشن لمرة واحدة.</p>
+          <ul><li data-i18n="p1_a">فيديو موشن أو AI حتى 30 ثانية</li><li data-i18n="p1_b">فكرة وسكريبت</li><li data-i18n="p1_c">مقاس واحد حسب المنصة</li><li data-i18n="p1_d">تعديلين</li></ul>
+          <a class="btn btn-ghost wa" data-pkg="p1" href="#" target="_blank" rel="noopener" data-i18n="ask_price">اطلب السعر</a>
+        </article>
+        <article class="pkg hot reveal">
+          <span class="tag" data-i18n="p2_tag">الأكثر طلباً</span>
+          <h3 data-i18n="p2_t">باقة شهرية</h3>
+          <p class="for" data-i18n="p2_f">للمتاجر والبراندات اللي محتاجة محتوى ثابت كل شهر.</p>
+          <ul><li data-i18n="p2_a">8 ريلز مونتاج أو AI</li><li data-i18n="p2_b">8 تصاميم بوست</li><li data-i18n="p2_c">تسليم على دفعات خلال الشهر</li></ul>
+          <a class="btn btn-gold wa" data-pkg="p2" href="#" target="_blank" rel="noopener" data-i18n="ask_price">اطلب السعر</a>
+        </article>
+        <article class="pkg reveal">
+          <h3 data-i18n="p3_t">إطلاق براند</h3>
+          <p class="for" data-i18n="p3_f">لو بتطلق منتج أو براند جديد ومحتاج حملة كاملة.</p>
+          <ul><li data-i18n="p3_a">لوجو أنيميشن</li><li data-i18n="p3_b">فيديو تعريفي موشن</li><li data-i18n="p3_c">4 إعلانات AI للمنتجات</li><li data-i18n="p3_d">بوستات للحملة</li></ul>
+          <a class="btn btn-ghost wa" data-pkg="p3" href="#" target="_blank" rel="noopener" data-i18n="ask_price">اطلب السعر</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div>
+          <span class="eyebrow" data-i18n="ct_eyebrow">جاهز نبدأ؟</span>
+          <h2 style="margin-top:10px" data-i18n="ct_title">فكرتك تستاهل تتحرك</h2>
+          <p data-i18n="ct_lead">ابعت رسالة على واتساب فيها نوع نشاطك والفيديو اللي في بالك، وأرد عليك بفكرة وعرض سعر.</p>
+          <div class="socials" data-socials></div>
+        </div>
+        <div class="cards">
+          <div class="cline">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg></span>
+            <div class="txt"><small>WhatsApp</small><b>+20 101 205 3954</b></div>
+            <a class="act wa" href="#" target="_blank" rel="noopener" data-i18n="open_chat">محادثة</a>
+          </div>
+          <div class="cline">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z" fill="none" stroke="#1c0a23" stroke-width="2"/><path d="M3 6l9 7 9-7" fill="none" stroke="#1c0a23" stroke-width="2"/></svg></span>
+            <div class="txt"><small>Email</small><b id="mail">emanshabana555@gmail.com</b></div>
+            <button class="act" type="button" id="copyMail" data-i18n="copy">نسخ</button>
+          </div>
+          <div class="cline">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M2 6h6.2c2.4 0 3.8 1.2 3.8 3 0 1.2-.7 2-1.6 2.4 1.3.4 2.1 1.4 2.1 2.8 0 2.2-1.7 3.8-4.4 3.8H2Zm3 2.4v2.5h2.8c.9 0 1.4-.5 1.4-1.3s-.5-1.2-1.4-1.2Zm0 4.7v2.6h3c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3ZM14.5 7h6v1.4h-6ZM17.6 9.6c2.7 0 4.2 1.9 4.1 4.9h-6.1c.1 1.3.9 2 2.1 2 .8 0 1.5-.4 1.7-1h2.2c-.5 1.9-2 3-4 3-2.6 0-4.3-1.7-4.3-4.4 0-2.7 1.7-4.5 4.3-4.5Zm-.1 1.9c-1 0-1.7.6-1.9 1.6h3.7c-.1-1-.8-1.6-1.8-1.6Z"/></svg></span>
+            <div class="txt"><small>Behance</small><b>behance.net/emanhamada6</b></div>
+            <a class="act" href="https://www.behance.net/emanhamada6" target="_blank" rel="noopener" data-i18n="visit">زيارة</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand"><img src="logo.jpg" alt="Moshanilla"><span>© 2026 Moshanilla · Eman Shabana</span></div>
+    <div class="socials" data-socials></div>
+  </div>
+</footer>
+
+<a class="fab wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>
+</a>
+
+<script>
+/* Social links — shown in the hero, contact and footer */
+const SOCIALS = [
+  {name:"Instagram", url:"https://www.instagram.com/emmaa_designerr/", d:"M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm5-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"},
+  {name:"TikTok", url:"https://www.tiktok.com/@emy.motion", d:"M16.6 3c.3 2.1 1.6 3.6 3.9 3.8v3.1c-1.4.1-2.7-.3-3.9-1.1v6.1c0 3.9-3.4 6.4-6.9 5.6-4.3-1-5.4-6.6-1.8-9 1-.7 2.3-1 3.6-.9v3.2c-.4-.1-.8-.2-1.2-.1-1.7.2-2.5 2.2-1.4 3.5 1.2 1.4 3.6.7 3.6-1.4V3Z"},
+  {name:"YouTube", url:"https://www.youtube.com/@Moshanillaa", d:"M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5.2 3Z"},
+  {name:"Behance", url:"https://www.behance.net/emanhamada6", d:"M2 6h6.2c2.4 0 3.8 1.2 3.8 3 0 1.2-.7 2-1.6 2.4 1.3.4 2.1 1.4 2.1 2.8 0 2.2-1.7 3.8-4.4 3.8H2Zm3 2.4v2.5h2.8c.9 0 1.4-.5 1.4-1.3s-.5-1.2-1.4-1.2Zm0 4.7v2.6h3c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3ZM14.5 7h6v1.4h-6ZM17.6 9.6c2.7 0 4.2 1.9 4.1 4.9h-6.1c.1 1.3.9 2 2.1 2 .8 0 1.5-.4 1.7-1h2.2c-.5 1.9-2 3-4 3-2.6 0-4.3-1.7-4.3-4.4 0-2.7 1.7-4.5 4.3-4.5Zm-.1 1.9c-1 0-1.7.6-1.9 1.6h3.7c-.1-1-.8-1.6-1.8-1.6Z"}
+];
+document.querySelectorAll("[data-socials]").forEach(box=>{
+  box.innerHTML = SOCIALS.map(s=>`<a class="soc" href="${s.url}" target="_blank" rel="noopener" aria-label="${s.name}" title="${s.name}"><svg viewBox="0 0 24 24"><path d="${s.d}"/></svg></a>`).join("");
+});
+
+/* Portfolio items from Behance */
+const B = "https://www.behance.net/gallery/";
+const WORKS = [
+  {cat:"motion", img:"work/w1.png",  ar:"موشن جرافيك جيدان", en:"Jaydan – motion graphics", url:B+"251600285/_"},
+  {cat:"motion", img:"work/w2.png",  ar:"إتقان لتعليم القرآن الكريم", en:"Itqan Quran Academy", url:B+"248687897/_"},
+  {cat:"motion", img:"work/w3.png",  ar:"موشن جرافيك احترافي", en:"Professional motion graphics", url:B+"244553719/Professional-motion-graphics"},
+  {cat:"motion", img:"work/w4.png",  ar:"موشن جرافيك راحة بال", en:"Rahet Bal – motion graphics", url:B+"242554287/_"},
+  {cat:"motion", img:"work/w5.png",  ar:"موشن جرافيك دواء أموكسيسيلين", en:"Amoxicillin – medical explainer", url:B+"240853797/_"},
+  {cat:"edit",   img:"work/w9.png",  ar:"مونتاج ريلز", en:"Reels editing", url:B+"226891441/_"},
+  {cat:"motion", img:"work/w6.png",  ar:"موشن جرافيك صفحة أحمد ديزاين", en:"Ahmed Design page – motion", url:B+"235603251/_"},
+  {cat:"edit",   img:"work/w7.png",  ar:"فيديو كولاج", en:"Collage video", url:B+"232064705/_"},
+  {cat:"motion", img:"work/w8.png",  ar:"موشن جرافيك إي كارد", en:"E-card motion graphics", url:B+"229842305/_"},
+  {cat:"motion", img:"work/w10.png", ar:"مصدر لخدمات الشحن", en:"Masdar shipping services", url:B+"226890633/_"},
+  {cat:"motion", img:"work/w11.png", ar:"البورصة العقارية", en:"Real estate exchange", url:B+"226890513/_"},
+  {cat:"motion", img:"work/w12.png", ar:"فيديو موشن مصدر", en:"Masdar motion video", url:B+"224987979/_"}
+];
+const CAT = {motion:["موشن جرافيك","Motion graphics"],edit:["مونتاج","Video editing"]};
+
+const T = {
+ en:{nav_work:"Work",nav_services:"Services",nav_process:"Process",nav_packages:"Packages",nav_contact:"Contact",nav_cta:"Start a project",
+  hero_eyebrow:"Motion graphics · Editing · AI video",
+  hero_title:'We turn your idea into a video that <span class="gold">moves… and sells</span>',
+  hero_lead:"I'm Eman Shabana, a motion designer. I make motion graphics, AI product ads and ready-to-post reels for brands in Egypt and the Gulf.",
+  cta_whatsapp:"Chat on WhatsApp",cta_work:"See the work",
+  s1:"Projects on Behance",s2:"Motion & AI-generated video",s3b:"Egypt & Gulf",s3:"Clients across the region",
+  work_eyebrow:"Portfolio",work_title:"Work that speaks for itself",f_all:"All",f_motion:"Motion graphics",f_edit:"Editing",
+  svc_eyebrow:"Services",svc_title:"Everything your brand needs on screen",svc_lead:"A single video or a full package, depending on what you need.",
+  sv1_t:"Motion graphics",sv1_d:"Logo animations, explainers and motion ads that explain your offer in seconds.",sv1_a:"Logo animation",sv1_b:"30–60 sec intro video",sv1_c:"Animated infographics",
+  sv2_t:"AI videos",sv2_d:"Product ads and scenes generated with AI, for less cost and time than a shoot.",sv2_a:"Product ad from photos",sv2_b:"AI characters & scenes",sv2_c:"AI voice-over",
+  sv3_t:"Reel editing",sv3_d:"Light, fast-paced edits for TikTok, Instagram and Snapchat.",sv3_a:"Cuts, pacing & music",sv3_b:"On-screen text",
+  sv4_t:"Social designs",sv4_d:"Post designs with a consistent brand look that match your videos.",sv4_a:"Social media posts",
+  pr_eyebrow:"Process",pr_title:"From first message to final video",pr_lead:"Clear steps, with updates at every stage.",
+  st1_t:"We talk",st1_d:"Send your idea or product and we set the goal, platform and length.",st2_t:"Concept & script",st2_d:"I prepare a concept and short script for your approval before production.",
+  st3_t:"Production",st3_d:"Design, animation and editing, then a first cut for you to review.",st4_t:"Delivery",st4_d:"Revisions from your notes, then delivery in high quality.",
+  pk_eyebrow:"Packages",pk_title:"Pick what fits your brand",pk_lead:"Pricing depends on the brief. Message me on WhatsApp and get a quote within hours.",
+  p1_t:"Single video",p1_f:"For a one-time ad or logo animation.",p1_a:"Motion or AI video up to 30 sec",p1_b:"Concept & script",p1_c:"One size for your platform",p1_d:"Two revisions",
+  p2_tag:"Most popular",p2_t:"Monthly package",p2_f:"For stores and brands that need steady content every month.",p2_a:"8 edited or AI reels",p2_b:"8 post designs",p2_c:"Delivered in batches through the month",
+  p3_t:"Brand launch",p3_f:"Launching a product or brand and need a full campaign.",p3_a:"Logo animation",p3_b:"Motion intro video",p3_c:"4 AI product ads",p3_d:"Campaign posts",
+  ask_price:"Get a quote",ct_eyebrow:"Ready to start?",ct_title:"Your idea deserves to move",ct_lead:"Send a WhatsApp message with your business type and the video you have in mind, and I'll reply with an idea and a quote.",
+  open_chat:"Chat",visit:"Visit",copy:"Copy",copied:"Copied",watch:"Watch"}
+};
+const WA = "201012053954";
+const MSG = {ar:"مرحباً موشانيلا 👋 حابب أطلب فيديو لعلامتي التجارية",en:"Hi Moshanilla 👋 I'd like to order a video for my brand"};
+const PKG = {p1:["فيديو واحد","Single video"],p2:["الباقة الشهرية","Monthly package"],p3:["باقة إطلاق براند","Brand launch package"]};
+
+const AR = {};
+document.querySelectorAll("[data-i18n]").forEach(el=>AR[el.dataset.i18n]=el.textContent);
+document.querySelectorAll("[data-i18n-html]").forEach(el=>AR[el.dataset.i18nHtml]=el.innerHTML);
+AR.copied="تم النسخ"; AR.watch="شاهد";
+T.ar = AR;
+
+let lang = "ar";
+try{ const s=localStorage.getItem("msh-lang"); if(s==="en"||s==="ar") lang=s; }catch(e){}
+let filter = "all";
+
+const playSvg = '<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>';
+function renderWorks(){
+  const g = document.getElementById("gridWork"); g.innerHTML = "";
+  WORKS.filter(w=>filter==="all"||w.cat===filter).forEach(w=>{
+    const el = document.createElement("a");
+    el.className = "work"; el.href=w.url; el.target="_blank"; el.rel="noopener";
+    el.innerHTML = `<div class="thumb"><img src="${w.img}" alt="" loading="lazy"><span class="play">${playSvg}</span><span class="ratio">Behance</span></div>
+      <div><h3>${lang==="ar"?w.ar:w.en}</h3><div class="meta">${CAT[w.cat][lang==="ar"?0:1]} · <span class="watch">${T[lang].watch} ↗</span></div></div>`;
+    g.appendChild(el);
+  });
+}
+function renderTicker(){
+  const items = lang==="ar" ? ["موشن جرافيك","إعلانات AI","مونتاج ريلز","لوجو أنيميشن","تصاميم سوشيال","فيديو تعريفي"] : ["Motion graphics","AI ads","Reel editing","Logo animation","Social designs","Explainer videos"];
+  const half = items.map(t=>`<span>${t}</span>`).join("");
+  document.getElementById("ticker").innerHTML = half+half+half+half;
+}
+function setWa(){
+  document.querySelectorAll("a.wa").forEach(a=>{
+    let m = MSG[lang];
+    if(a.dataset.pkg) m += " — " + PKG[a.dataset.pkg][lang==="ar"?0:1];
+    a.href = "https://wa.me/"+WA+"?text="+encodeURIComponent(m);
+  });
+}
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang==="ar" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{ const v=T[lang][el.dataset.i18n]; if(v!=null) el.textContent=v; });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{ const v=T[lang][el.dataset.i18nHtml]; if(v!=null) el.innerHTML=v; });
+  document.getElementById("langBtn").textContent = lang==="ar" ? "EN" : "عربي";
+  renderWorks(); renderTicker(); setWa();
+  try{ localStorage.setItem("msh-lang",lang); }catch(e){}
+}
+document.getElementById("langBtn").addEventListener("click",()=>{ lang = lang==="ar"?"en":"ar"; applyLang(); });
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+  filter=c.dataset.f; document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed", x===c?"true":"false")); renderWorks();
+}));
+document.getElementById("copyMail").addEventListener("click",e=>{
+  const b=e.currentTarget, txt=document.getElementById("mail").textContent;
+  const done=()=>{ b.textContent=T[lang].copied; setTimeout(()=>b.textContent=T[lang].copy,1600); };
+  try{ navigator.clipboard.writeText(txt).then(done).catch(selectMail); }catch(err){ selectMail(); }
+});
+function selectMail(){ const r=document.createRange(); r.selectNodeContents(document.getElementById("mail")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+/* timeline playhead + timecode */
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ph=document.getElementById("ph"), tc=document.getElementById("tc");
+const t0=performance.now();
+function tick(now){
+  const p=((now-t0)/12000)%1, secs=p*30, f=Math.floor((secs%1)*30);
+  ph.style.left=(p*100)+"%";
+  tc.textContent="00:00:"+String(Math.floor(secs)).padStart(2,"0")+":"+String(f).padStart(2,"0");
+  requestAnimationFrame(tick);
+}
+if(!reduce) requestAnimationFrame(tick); else { ph.style.left="42%"; tc.textContent="00:00:12:15"; }
+
+/* gentle reveal — content stays readable before it animates */
+if(!reduce && "IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.remove("pre"); io.unobserve(e.target);} }),{rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".reveal").forEach(el=>{ const r=el.getBoundingClientRect(); if(r.top>innerHeight){ el.classList.add("pre"); io.observe(el);} });
+}
+applyLang();
+</script>
+
+</body>
+</html>
